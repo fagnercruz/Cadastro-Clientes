@@ -1,12 +1,16 @@
 package br.com.adnav.Cadastroclientes.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Usuario implements Serializable{
@@ -23,11 +27,15 @@ public class Usuario implements Serializable{
 	private String expedidor;
 	private String expedidorUf;
 	private String telefone; 
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Endereco> enderecos = new ArrayList<>();
 	
 	public Usuario() {}
 
+	
+
 	public Usuario(Long id, String nome, int idade, Long cpf, Long identidade, String expedidor, String expedidorUf,
-			String telefone) {
+			String telefone, List<Endereco> enderecos) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -37,7 +45,10 @@ public class Usuario implements Serializable{
 		this.expedidor = expedidor;
 		this.expedidorUf = expedidorUf;
 		this.telefone = telefone;
+		this.enderecos = enderecos;
 	}
+
+
 
 	public Long getId() {
 		return id;
@@ -101,6 +112,14 @@ public class Usuario implements Serializable{
 
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
+	}
+
+	public List<Endereco> getEnderecos() {
+		return enderecos;
+	}
+
+	public void setEnderecos(List<Endereco> enderecos) {
+		this.enderecos = enderecos;
 	}
 
 	@Override
