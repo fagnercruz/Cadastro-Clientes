@@ -1,4 +1,4 @@
-package br.com.adnav.Cadastroclientes;
+package br.com.adnav.cadastroclientes;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

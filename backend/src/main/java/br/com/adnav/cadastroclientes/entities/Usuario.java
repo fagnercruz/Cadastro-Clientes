@@ -1,4 +1,4 @@
-package br.com.adnav.Cadastroclientes.entities;
+package br.com.adnav.cadastroclientes.entities;
 
 import java.io.Serializable;
 import java.util.ArrayList;
