@@ -1,10 +1,7 @@
 package br.com.adnav.cadastroclientes.dto;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
-import br.com.adnav.cadastroclientes.entities.Endereco;
 import br.com.adnav.cadastroclientes.entities.Usuario;
 
 public class UsuarioDTO {
@@ -12,36 +9,33 @@ public class UsuarioDTO {
 	private Long id;
 	private String nome;
 	private Long cpf;
-	private List<EnderecoDTO> enderecos = new ArrayList<>();
+	private String CEP;
+	private String endereco;
+	private String cidade;
+	
 	
 	public UsuarioDTO() {
 	}
 
-	public UsuarioDTO(Long id, String nome, Long cpf, List<EnderecoDTO> enderecos) {
+	public UsuarioDTO(Long id, String nome, Long cpf, String cep, String endereco, String cidade) {
+		super();
 		this.id = id;
 		this.nome = nome;
 		this.cpf = cpf;
-		this.enderecos = enderecos;
+		this.CEP = cep;
+		this.endereco = endereco;
+		this.cidade = cidade;
 	}
-	
+
 	public UsuarioDTO(Usuario entity) {
 		this.id = entity.getId();
 		this.nome = entity.getNome();
 		this.cpf = entity.getCpf();
-		
-		this.enderecos.clear();
-		if(!entity.getEnderecos().isEmpty()) {
-			for(Endereco end : entity.getEnderecos()) {
-				this.enderecos.add(new EnderecoDTO(end));
-			}
-		}
+		this.CEP = entity.getCEP();
+		this.endereco = entity.getEndereco();
+		this.cidade = entity.getCidade();
 	}
 	
-	public UsuarioDTO(Usuario entity, List<Endereco> enderecos) {
-		this(entity);
-		enderecos.forEach(endereco -> this.enderecos.add(new EnderecoDTO(endereco)));
-	}
-
 	public Long getId() {
 		return id;
 	}
@@ -66,8 +60,28 @@ public class UsuarioDTO {
 		this.cpf = cpf;
 	}
 
-	public List<EnderecoDTO> getEnderecos() {
-		return enderecos;
+	public String getCEP() {
+		return CEP;
+	}
+
+	public void setCEP(String cEP) {
+		CEP = cEP;
+	}
+
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+
+	public String getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
 	}
 
 	@Override

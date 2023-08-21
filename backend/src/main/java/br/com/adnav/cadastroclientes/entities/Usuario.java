@@ -1,19 +1,12 @@
 package br.com.adnav.cadastroclientes.entities;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
 
 @Entity
 public class Usuario implements Serializable{
@@ -26,21 +19,28 @@ public class Usuario implements Serializable{
 	private String nome;
 	private Long cpf;
 	
-	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinTable(
-			name = "tb_usuario_endereco",
-			joinColumns = @JoinColumn(name = "usuario_id"),
-			inverseJoinColumns = @JoinColumn(name = "endereco_id"))
-	private List<Endereco> enderecos = new ArrayList<>();
+	/* endereço ficou aqui para simplificar o desenvolvimento */
+	private String CEP;
+	private String endereco;
+	private String cidade;
+	
+//	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+//	@JoinTable(
+//			name = "tb_usuario_endereco",
+//			joinColumns = @JoinColumn(name = "usuario_id"),
+//			inverseJoinColumns = @JoinColumn(name = "endereco_id"))
+//	private List<Endereco> enderecos = new ArrayList<>();
 	
 	public Usuario() {}
 
-	public Usuario(Long id, String nome, Long cpf, List<Endereco> enderecos) {
+	public Usuario(Long id, String nome, Long cpf, String cEP, String endereco, String cidade) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.cpf = cpf;
-		this.enderecos = enderecos;
+		CEP = cEP;
+		this.endereco = endereco;
+		this.cidade = cidade;
 	}
 
 	public Long getId() {
@@ -67,8 +67,28 @@ public class Usuario implements Serializable{
 		this.cpf = cpf;
 	}
 
-	public List<Endereco> getEnderecos() {
-		return enderecos;
+	public String getCEP() {
+		return CEP;
+	}
+
+	public void setCEP(String cEP) {
+		CEP = cEP;
+	}
+
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+
+	public String getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
 	}
 
 	@Override
