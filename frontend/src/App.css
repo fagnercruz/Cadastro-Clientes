@@ -1,0 +1,8 @@
+.App {
+  padding: 25px;
+}
+
+.App > h2 {
+  text-align: center;
+  font-weight: 100;
+}

@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--dark-grey);
+  color: var(--light-grey);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* Defina aqui as variáveis para compor a paleta de cores do projeto*/
+:root {
+  --primary: rgb(25, 31, 110);
+  --dark-grey: #333;
+  --light-grey: #a7a7a7;
+}
