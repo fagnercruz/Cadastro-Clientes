@@ -19,7 +19,7 @@ code {
 
 /* Defina aqui as variáveis para compor a paleta de cores do projeto*/
 :root {
-  --primary: rgb(25, 31, 110);
+  --primary: rgb(248, 161, 0);
   --dark-grey: #333;
   --light-grey: #a7a7a7;
 }
