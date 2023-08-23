@@ -8,7 +8,7 @@ type Props = {
 const Usercard = ({ usuario }: Props) => {
   return (
     <div className="usercard-container">
-      <p>Nome: {usuario.nome}</p>
+      <h3>{usuario.nome}</h3>
       <p>CEP: {usuario.cep}</p>
       <p>End: {usuario.logradouro}</p>
     </div>

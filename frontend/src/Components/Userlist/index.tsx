@@ -10,7 +10,7 @@ const Userlist = ({ usuarios }: Props) => {
   return (
     <div className="userlist">
       {usuarios.map((usuario) => {
-        return <Usercard usuario={usuario} />;
+        return <Usercard usuario={usuario} key={usuario.id} />;
       })}
     </div>
   );
