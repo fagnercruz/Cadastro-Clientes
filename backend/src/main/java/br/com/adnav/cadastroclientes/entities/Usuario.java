@@ -17,30 +17,17 @@ public class Usuario implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
-	private Long cpf;
-	
-	/* endereço ficou aqui para simplificar o desenvolvimento */
 	private String CEP;
 	private String endereco;
-	private String cidade;
-	
-//	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-//	@JoinTable(
-//			name = "tb_usuario_endereco",
-//			joinColumns = @JoinColumn(name = "usuario_id"),
-//			inverseJoinColumns = @JoinColumn(name = "endereco_id"))
-//	private List<Endereco> enderecos = new ArrayList<>();
 	
 	public Usuario() {}
 
-	public Usuario(Long id, String nome, Long cpf, String cEP, String endereco, String cidade) {
+	public Usuario(Long id, String nome, String cEP, String endereco) {
 		super();
 		this.id = id;
 		this.nome = nome;
-		this.cpf = cpf;
 		CEP = cEP;
 		this.endereco = endereco;
-		this.cidade = cidade;
 	}
 
 	public Long getId() {
@@ -59,14 +46,6 @@ public class Usuario implements Serializable{
 		this.nome = nome;
 	}
 
-	public Long getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(Long cpf) {
-		this.cpf = cpf;
-	}
-
 	public String getCEP() {
 		return CEP;
 	}
@@ -81,14 +60,6 @@ public class Usuario implements Serializable{
 
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
-	}
-
-	public String getCidade() {
-		return cidade;
-	}
-
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
 	}
 
 	@Override

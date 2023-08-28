@@ -8,10 +8,8 @@ public class UsuarioDTO {
 
 	private Long id;
 	private String nome;
-	private Long cpf;
 	private String CEP;
 	private String endereco;
-	private String cidade;
 	
 	
 	public UsuarioDTO() {
@@ -21,19 +19,15 @@ public class UsuarioDTO {
 		super();
 		this.id = id;
 		this.nome = nome;
-		this.cpf = cpf;
 		this.CEP = cep;
 		this.endereco = endereco;
-		this.cidade = cidade;
 	}
 
 	public UsuarioDTO(Usuario entity) {
 		this.id = entity.getId();
 		this.nome = entity.getNome();
-		this.cpf = entity.getCpf();
 		this.CEP = entity.getCEP();
 		this.endereco = entity.getEndereco();
-		this.cidade = entity.getCidade();
 	}
 	
 	public Long getId() {
@@ -52,14 +46,6 @@ public class UsuarioDTO {
 		this.nome = nome;
 	}
 
-	public Long getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(Long cpf) {
-		this.cpf = cpf;
-	}
-
 	public String getCEP() {
 		return CEP;
 	}
@@ -74,14 +60,6 @@ public class UsuarioDTO {
 
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
-	}
-
-	public String getCidade() {
-		return cidade;
-	}
-
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
 	}
 
 	@Override

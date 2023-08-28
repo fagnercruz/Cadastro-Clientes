@@ -78,39 +78,14 @@ public class UsuarioService {
 		}
 	}
 	
-	
 	// método util para copiar dados de um DTO para uma entidade
 	private Usuario DTOToUserConverter(UsuarioDTO dto) {
 		Usuario usuario = new Usuario();
 		
-		
-		//copy attributes of dto to entity
 		usuario.setNome(dto.getNome());
-		usuario.setCpf(dto.getCpf());
 		usuario.setCEP(dto.getCEP());
 		usuario.setEndereco(dto.getEndereco());
-		usuario.setCidade(dto.getCidade());
-
 		return usuario;
-		
-		
-		/* antes existia a entidade endereço que foi descontinuada para simplificar o desenvolvimento
-		 * 
-		 * Esse projeto é apenas para estudo e prática de alguns conceitos do framework. 
-		 * 
-		 * */
-		
-//		//copy address of dto to entity
-//		usuario.getEnderecos().clear();
-//		for(EnderecoDTO endDto : dto.getEnderecos()) {
-//			Endereco endereco = new Endereco();
-//			endereco.setId(endDto.getId());
-//			endereco.setCep(endDto.getCep());
-//			endereco.setLogradouro(endDto.getLogradouro());
-//			endereco.setCidade(endDto.getCidade());
-//			
-//			usuario.getEnderecos().add(endereco);
-//		}
 	}
 	
 }
