@@ -19,9 +19,9 @@ function App() {
     <div className="App">
       <h1>CADASTRO DE CLIENTES</h1>
       <h5>
-        Status backend:{" "}
+        Modo de consumo:{" "}
         <span className={CONSUMIR_API_EXTERNA ? "green" : "red"}>
-          {CONSUMIR_API_EXTERNA ? "Conectado" : "Em memória"}
+          {CONSUMIR_API_EXTERNA ? "API Externa" : "Em memória"}
         </span>
       </h5>
       <Formcard adicionarUsuario={adicionarUsuario} listaUsuarios={dados} />
