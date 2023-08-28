@@ -1,35 +1,31 @@
 import "./App.css";
 import Formcard from "./Components/Formcard";
 import Userlist from "./Components/Userlist";
+import { LISTA_EM_MEMORIA } from "./Utils/globalMockData";
+import { useState } from "react";
 import { Usuario } from "./Utils/typesUtils";
-
-const usuarios: Usuario[] = [
-  {
-    id: 1,
-    nome: "Fagner Cruz",
-    cep: "58000-000",
-    logradouro: "Rua Coronel Caetano Júlio, 64",
-  },
-  {
-    id: 2,
-    nome: "Vanda Cunha",
-    cep: "58000-000",
-    logradouro: "Rua Iaia Paiva, 123",
-  },
-  {
-    id: 3,
-    nome: "Ultimo usuário da lista",
-    cep: "58000-000",
-    logradouro: "Rua Sem saída, 171",
-  },
-];
+import { CONSUMIR_API_EXTERNA } from "./Utils/configurations";
 
 function App() {
+  // useState para gerenciar o estado da lista em memória
+  const [dados, setDados] = useState<Usuario[]>(LISTA_EM_MEMORIA);
+
+  // função que adiciona um novo usuario na lista
+  const adicionarUsuario = (novo: Usuario) => {
+    setDados([...dados, novo]);
+  };
+
   return (
     <div className="App">
       <h1>CADASTRO DE CLIENTES</h1>
-      <Formcard />
-      <Userlist usuarios={usuarios} />
+      <h5>
+        Status backend:{" "}
+        <span className={CONSUMIR_API_EXTERNA ? "green" : "red"}>
+          {CONSUMIR_API_EXTERNA ? "Conectado" : "Em memória"}
+        </span>
+      </h5>
+      <Formcard adicionarUsuario={adicionarUsuario} listaUsuarios={dados} />
+      <Userlist usuarios={dados} />
     </div>
   );
 }

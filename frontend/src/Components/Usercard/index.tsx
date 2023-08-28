@@ -10,7 +10,7 @@ const Usercard = ({ usuario }: Props) => {
     <div className="usercard-container">
       <h3>{usuario.nome}</h3>
       <p>CEP: {usuario.cep}</p>
-      <p>End: {usuario.logradouro}</p>
+      <p>End: {usuario.endereco}</p>
     </div>
   );
 };
