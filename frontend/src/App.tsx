@@ -5,6 +5,7 @@ import { LISTA_EM_MEMORIA } from "./Utils/globalMockData";
 import { useState } from "react";
 import { Usuario } from "./Utils/typesUtils";
 import { CONSUMIR_API_EXTERNA } from "./Utils/configurations";
+import Footer from "./Components/Footer";
 
 function App() {
   // useState para gerenciar o estado da lista em memória
@@ -26,6 +27,7 @@ function App() {
       </h5>
       <Formcard adicionarUsuario={adicionarUsuario} listaUsuarios={dados} />
       <Userlist usuarios={dados} />
+      <Footer />
     </div>
   );
 }

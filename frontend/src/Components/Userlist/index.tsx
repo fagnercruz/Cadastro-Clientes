@@ -40,15 +40,17 @@ const Userlist = ({ usuarios }: Props) => {
 
   return (
     <div className="userlist">
-      {isLoading && (
-        <div className="loader">
-          <DotWave size={50} speed={0.9} color="orange" />
-        </div>
-      )}
-      {!isLoading &&
-        users?.map((usuario) => {
-          return <Usercard usuario={usuario} key={usuario.id} />;
-        })}
+      <div className="userlist-container">
+        {isLoading && (
+          <div className="loader">
+            <DotWave size={50} speed={0.9} color="orange" />
+          </div>
+        )}
+        {!isLoading &&
+          users?.map((usuario) => {
+            return <Usercard usuario={usuario} key={usuario.id} />;
+          })}
+      </div>
     </div>
   );
 };

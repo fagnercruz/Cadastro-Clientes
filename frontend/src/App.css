@@ -1,5 +1,8 @@
 .App {
   padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .App > h1 {

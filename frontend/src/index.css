@@ -8,8 +8,27 @@ body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--dark-grey);
+  min-height: 100vh;
+
   color: var(--light-grey);
+
+  background: rgb(2, 62, 114);
+  background: -moz-linear-gradient(
+    175deg,
+    rgba(2, 62, 114, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    175deg,
+    rgba(2, 62, 114, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  background: linear-gradient(
+    175deg,
+    rgba(2, 62, 114, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#023e72",endColorstr="#000000",GradientType=1);
 }
 
 code {
@@ -22,4 +41,5 @@ code {
   --primary: rgb(248, 161, 0);
   --dark-grey: #333;
   --light-grey: #a7a7a7;
+  --light-blue: #5fc8ff;
 }

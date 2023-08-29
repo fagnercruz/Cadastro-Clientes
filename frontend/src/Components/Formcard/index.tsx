@@ -69,7 +69,7 @@ const Formcard = ({ adicionarUsuario, listaUsuarios }: FormcardProps) => {
           name="endereco"
           placeholder="Endereço"
         />
-        <button>Enviar</button>
+        <button>SALVAR</button>
       </form>
     </div>
   );

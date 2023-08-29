@@ -1,6 +1,13 @@
+.formcard {
+  display: flex;
+  justify-content: center;
+}
+
 form {
-  border: 1px solid #fff;
-  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 90%;
+  padding: 40px 20px;
   margin-top: 30px;
   display: flex;
   flex-direction: column;
@@ -9,7 +16,7 @@ form {
 }
 
 form input {
-  width: 500px;
+  width: 80%;
   height: 35px;
   border-radius: 6px;
   border: 0px;
@@ -22,5 +29,15 @@ form button {
   height: 35px;
   border-radius: 6px;
   border: 0px;
-  background-color: var(--primary);
+  background-color: var(--light-blue);
+}
+
+@media (min-width: 768px) {
+  form input {
+    width: 500px;
+  }
+
+  form {
+    width: 600px;
+  }
 }

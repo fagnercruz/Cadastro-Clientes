@@ -1,5 +1,11 @@
 .userlist {
-  border: 1px solid #08bddd;
+  display: flex;
+  justify-content: center;
+}
+.userlist-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  width: 90%;
 
   margin-top: 20px;
   padding: 20px 20px;
@@ -12,4 +18,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (min-width: 768px) {
+  .userlist-container {
+    width: 600px;
+  }
 }
